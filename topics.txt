@@ -1,0 +1,5 @@
+Vorgeschlagene Themen:
+
+- Vergleich zu anderen Systemen, Vor-/Nachteile
+- Interoperabilität mit CVS/SVN
+- Firmenumfeld (Vorurteile bzgl. „zentral“ und „sicher“)

@@ -164,7 +164,12 @@ Initialized empty Git repository in /home/scy/repo
 \begin{example}
 \begin{lstlisting}
 %\SH{git clone git://github.com/scy/mylvmdump.git}%
-TODO: Message einfuegen.
+Initialized empty Git repository in C:/foobar/.git/
+remote: Counting objects: 264, done.
+%remote: Compressing objects: 100\% (120/120), done.%
+%Receiving objects: 100\% (264/264), 56.68 KiB, done.%
+remote: Total 264 (delta 141), reused 264 (delta 141)
+%Resolving deltas: 100\% (141/141), done.%
 \end{lstlisting}
 \end{example}
 \end{frame}
@@ -248,10 +253,53 @@ no changes added to commit
 %\SH{git commit -a -m 'foo.txt verbessert'}%
 \end{lstlisting}
 \end{example}
-%	\item \TYPE|git add -A| übernimmt alle Änderungen an Dateien, die bereits unter Versionskontrolle stehen, in den Index.
-%	\item \TYPE|git commit -a| ist die Kurzform von \TYPE|git add -A && git commit|.
 \end{frame}
 
+\begin{frame}[fragile=singleslide]{Änderungen der Anderen holen}
+\begin{example}
+\begin{lstlisting}
+%\SH{git pull}%
+From git://github.com/scy/oqlt
+   c62ed30..f98ab88  master     -> origin/master
+Merge made by recursive.
+ create mode 100644 pages/propaganda/20090903-aushang.pdf
+\end{lstlisting}
+\begin{center}\includegraphics[width=0.8\linewidth]{merge.png}\end{center}
+\end{example}
+\end{frame}
+
+\subsection{Branches ohne Ende}
+
+\begin{frame}{Branches in Git}
+\begin{itemize}
+	\item die natürlichste Sache der Welt
+	\item ein Branch ist ein Zeiger auf einen kinderlosen Commit\\(eine „Entwicklungsspitze“)
+	\item Branches sind (normalerweise) lokal; der Rest der Welt\\sieht deinen Unfug nicht
+	\item hin und her mergen zwischen Branches ist trivial
+\end{itemize}
+\begin{center}\includegraphics[width=0.8\linewidth]{branches.png}\end{center}
+\end{frame}
+
+\begin{frame}{Vorteile}
+\begin{itemize}
+	\item keine Angst vor Branches
+	\item Branches zwischen einzelnen Developern tauschen
+	\item Feature-Branches
+	\item komplett unterschiedliche Inhalte in einem Repository (Code, Doku, Website, Git-basierter Bugtracker, \ldots)
+\end{itemize}
+\end{frame}
+
+\section{Die geile Scheiße}
+
+\subsection{Tricks beim Committen}
+
+\begin{frame}{Committen einzelner Änderungen}
+\begin{itemize}
+	\item Vorteil des Index: Man kann auch nur „halbe“ Dateien committen
+	\item \TYPE|git add -p| (für „patch“) erlaubt, einzelne Diff-Hunks für einen Commit auszuwählen
+	\item \textbf{Demo!}
+\end{itemize}
+\end{frame}
 
 
 
